@@ -1,6 +1,7 @@
 var express = require('express')
 var request = require("request")
 var app = express()
+app.set("view engine", "ejs")
 
 app.get('/results', function(req, res){
   request("http://www.omdbapi.com/?apikey=thewdb&s=star", function(err, response, body){
