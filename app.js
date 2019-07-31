@@ -4,11 +4,11 @@ var app = express()
 app.set("view engine", "ejs")
 
 app.get('/results', function(req, res){
-  request("http://www.omdbapi.com/?apikey=thewdb&s=star", function(err, response, body){
+  request("http://www.omdbapi.com/?apikey=thewdb&s=utah", function(err, response, body){
     if(!err && response.statusCode === 200){
       //body is a string, data can't be accessed or manipulated
-      var results = JSON.parse(body) 
-      res.send(results["Search"][0]["Title"])
+      var data = JSON.parse(body) 
+      res.render("results", {data: data})
     }
   })
 })
