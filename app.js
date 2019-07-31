@@ -14,7 +14,9 @@ app.get('/results', function(req, res){
     if(!err && response.statusCode === 200){
       //body is a string, data can't be accessed or manipulated
       var data = JSON.parse(body) 
+      //JSON.parse will turn the string into an object that can be accessed
       res.render("results", {data: data})
+      //{data: data} is how you pass variables to your .ejs file
     }
   })
 })
