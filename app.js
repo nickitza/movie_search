@@ -8,7 +8,7 @@ app.get('/', function(req, res){
 })
 
 app.get('/results', function(req, res){
-  request("http://www.omdbapi.com/?apikey=thewdb&s=utah", function(err, response, body){
+  request("http://www.omdbapi.com/?apikey=thewdb&s=star", function(err, response, body){
     if(!err && response.statusCode === 200){
       //body is a string, data can't be accessed or manipulated
       var data = JSON.parse(body) 
